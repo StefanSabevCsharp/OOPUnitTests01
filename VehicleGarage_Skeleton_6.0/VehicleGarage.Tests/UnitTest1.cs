@@ -297,5 +297,20 @@ namespace VehicleGarage.Tests
             Assert.AreEqual(100, vehicle.BatteryLevel);
             Assert.AreEqual(100, vehicle2.BatteryLevel);
         }
+        //testing ChargeVehicles updating the charge status
+        [Test]
+        public void ChargeVehiclesTest4()
+        {
+            var garage = new Garage(10);
+            var vehicle = new Vehicle("Audi", "Q1", "CA1234");
+            var vehicle2 = new Vehicle("Audi", "Q1", "CA1235");
+            garage.AddVehicle(vehicle);
+            garage.AddVehicle(vehicle2);
+            vehicle.BatteryLevel = 50;
+            vehicle2.BatteryLevel = 50;
+            garage.ChargeVehicles(100);
+            Assert.AreEqual(100, vehicle.BatteryLevel);
+            Assert.AreEqual(100, vehicle2.BatteryLevel);
+        }
     }
 }
