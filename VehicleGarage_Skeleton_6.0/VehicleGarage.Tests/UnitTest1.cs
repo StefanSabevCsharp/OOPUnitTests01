@@ -322,6 +322,14 @@ namespace VehicleGarage.Tests
             garage.DriveVehicle("CA1234", 50, false);
             Assert.AreEqual(50, vehicle.BatteryLevel);
         }
+      
+        [Test]
+        public void LicensePlateNumberTest2()
+        {
+            var vehicle = new Vehicle("Audi", "Q1", "CA1234");
+            vehicle.LicensePlateNumber = "CA1235";
+            Assert.AreEqual("CA1235", vehicle.LicensePlateNumber);
+        }
 
     }
 }
